@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func romanEqui(inp string) string {
+func romanEquivalent(inp string) string {
 
 	var curVal int
 	res := 0
@@ -57,6 +57,6 @@ func main() {
 
 	inp = strings.ToUpper(inp) //Making it Capital If in case User Enters Inp in Lowercase
 
-	result := romanEqui(inp)
+	result := romanEquivalent(inp)
 	fmt.Println(result)
 }
