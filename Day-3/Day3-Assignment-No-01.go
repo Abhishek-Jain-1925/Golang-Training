@@ -4,13 +4,6 @@ import (
 	"fmt"
 )
 
-
-package main
-
-import (
-	"fmt"
-)
-
 func findADay(no int) (result string, err error) {
 	day := map[int]string{
 		1: "Monday",
