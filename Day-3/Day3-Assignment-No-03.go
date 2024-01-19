@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -20,7 +21,13 @@ func main() {
 
 	var orderedWords []string
 
-	for i := 0; i < len(s); i++ {
+	values := strings.Split(s, " ")
+
+	fmt.Println(values)
+
+	fmt.Println("You Have Entered : ", s)
+
+	for i := 0; i < len(); i++ {
 		ch := fmt.Sprintf("%c", s[i])
 
 		if ch == " " && temp != "" {

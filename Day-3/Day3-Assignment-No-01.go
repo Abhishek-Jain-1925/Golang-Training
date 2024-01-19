@@ -4,13 +4,6 @@ import (
 	"fmt"
 )
 
-
-package main
-
-import (
-	"fmt"
-)
-
 func findADay(no int) (result string, err error) {
 	day := map[int]string{
 		1: "Monday",
@@ -23,8 +16,10 @@ func findADay(no int) (result string, err error) {
 	}
 
 	result, ok := day[no]
+	// fmt.Println(result)
+	// fmt.Println(ok)
 	if !ok {
-		err = fmt.Errorf("Not a valid day number!")
+		err = fmt.Errorf("Not a day!")
 	}
 
 	return result, err
@@ -42,7 +37,6 @@ func main() {
 		fmt.Println("Equivalent day:", day)
 	}
 }
-
 
 // func findADay(no int) (result string, err error) {
 // 	day := map[int]string{
