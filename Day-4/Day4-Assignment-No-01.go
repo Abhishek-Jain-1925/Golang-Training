@@ -1,11 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-type AnyType interface {
-}
+type AnyType interface{}
 
 type Hello string
 
@@ -19,7 +16,7 @@ func AcceptAnything(inp AnyType) string {
 	case bool:
 		output = fmt.Sprintf("This is a Value of type Boolean, '%t'", inp)
 	case Hello:
-		output = fmt.Sprintf("This is a Value of type Hello, ", inp)
+		output = fmt.Sprintf("This is a Value of type Hello, '%s'", inp)
 	default:
 		output = "*** Plz, Enter Valid Choice !!"
 	}
@@ -31,7 +28,17 @@ func main() {
 
 	var no int
 	fmt.Println("Enter Your Input Between 1 to 4 : ")
-	fmt.Scan(&no)
+
+	_, err := fmt.Scan(&no)
+	if err != nil {
+		fmt.Println("Error reading input:", err)
+		return
+	}
+
+	if no < 1 || no > 4 {
+		fmt.Println("*** Plz, Enter Valid Choice !!")
+		return
+	}
 
 	var val AnyType
 	switch no {
