@@ -11,13 +11,16 @@ var inpStr string
 var m sync.Mutex
 
 func reverseString(inpStr string) {
+
+	defer wg.Done()
+	
 	var result string
 	for _, v := range inpStr {
 		result = string(v) + result
 	}
 	fmt.Println("Reversed String : ", result)
 	fmt.Println("Number of Goroutines : ", runtime.NumGoroutine())
-	wg.Done()
+	//wg.Done()
 }
 
 func main() {
