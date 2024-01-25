@@ -23,4 +23,7 @@ func main() {
 	wg.Wait()
 	close(a)
 
+	var m sync.Mutex
+	m.
+
 }
